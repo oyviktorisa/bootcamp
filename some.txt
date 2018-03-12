@@ -1,0 +1,54 @@
+package test;
+
+public class MainApp
+{
+
+    private static boolean isPalindrom(String test) {
+        String reverseTest = "";
+        for(int i = test.length ()-1;i>=0;i--) {
+            reverseTest = reverseTest + test.charAt (i);
+        }
+        
+        return test.equalsIgnoreCase (reverseTest);
+    }
+    
+    private static void makePyramid(int n) {
+        if(n%2==0) {
+            System.out.println ("Cannot make pyramid");
+            return;
+        }
+        int midPoint = n/2;
+        int printStar = 1;
+        for(int i=0;i<=n/2;i++) {
+            for(int j=0;j<midPoint;j++) {
+                System.out.print (" ");
+            }
+            for(int k=0;k<printStar;k++) {
+                System.out.print ("*");
+            }
+            System.out.println ("");
+            midPoint--;
+            printStar += 2;
+        }
+        
+    }
+    
+    public static void main (String[] args)
+    {
+        String testPalindrom1 = "katak";
+        String testPalindrom2 = "makan";
+        String testPalindrom3 = "MaKam";
+        
+        System.out.println (isPalindrom(testPalindrom1));
+        System.out.println (isPalindrom(testPalindrom2));
+        System.out.println (isPalindrom(testPalindrom3));
+        
+        int testPyramid1 = 10;
+        int testPyramid2 = 11;
+        
+        makePyramid(testPyramid1);
+        makePyramid(testPyramid2);
+    }
+    
+
+}
